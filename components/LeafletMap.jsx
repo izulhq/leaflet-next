@@ -18,17 +18,19 @@ const LeafletMap = ({ markers }) => {
         shadowUrl: require("leaflet/dist/images/marker-shadow.png").default,
       });
 
-      // Initialize map
-      const map = L.map("map").setView([-7.75000004, 110.902], 10);
+      // Initialize map with attribution control disabled
+      const map = L.map("map", { attributionControl: false }).setView(
+        [-7.75000004, 110.902],
+        10
+      );
       mapRef.current = map;
 
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
+        map
+      );
 
       const customIcon = L.icon({
-        iconUrl: "/marker.png",
+        iconUrl: "/images/marker.png",
         iconSize: [25, 25],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -37,8 +39,8 @@ const LeafletMap = ({ markers }) => {
       markers.forEach((marker) => {
         const popupContent = `${marker.popUp}
           <div class="flex justify-center mt-2">
-            <button type="button" class="whitespace-nowrap align-middle text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 hover:bg-gradient-to-br focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 font-medium rounded-[6px] text-[12px] px-2 py-1 text-center flex items-center">
-              <img src="/table.svg" class="stroke-white w-6 h-6 mr-1.5" />View&nbsp;Table
+            <button type="button" class="whitespace-nowrap align-middle text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 hover:bg-gradient-to-br focus:outline-none focus:ring-blue-300 shadow-md shadow-blue-500/50 font-medium rounded-[6px] text-[12px] px-2 py-1 text-center flex items-center">
+              <img src="/images/table.svg" class="stroke-white w-6 h-6 mr-1.5" />View&nbsp;Table
             </button>
           </div>
         `;

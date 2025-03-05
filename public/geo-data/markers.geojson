@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.7687198, -7.56131769]
+      },
+      "properties": {
+        "popUp": "Stasiun Pabelan"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.93, -7.97460004]
+      },
+      "properties": {
+        "popUp": "Stasiun Baturetno"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.902, -7.75000004]
+      },
+      "properties": {
+        "popUp": "Stasiun Bendung Colo"
+      }
+    }
+  ]
+}
